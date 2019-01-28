@@ -17,9 +17,9 @@ EXPOSE 4150 4151 4160 4161 4170 4171
 
 # Optional volumes
 # /data - used for persistent storage across reboots
-# VOLUME /data
+VOLUME /data
 # /etc/ssl/certs - directory for SSL certificates
-# VOLUME /etc/ssl/certs
+VOLUME /etc/ssl/certs
 
 COPY --from=build /opt/nsq/bin/ /usr/local/bin/
 RUN ln -s /usr/local/bin/*nsq* / \
